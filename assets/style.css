@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?m5gmgb');
+  src:  url('fonts/icomoon.eot?m5gmgb#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?m5gmgb') format('truetype'),
+    url('fonts/icomoon.woff?m5gmgb') format('woff'),
+    url('fonts/icomoon.svg?m5gmgb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-up:before {
+  content: "\e915";
+}
+.icon-mail:before {
+  content: "\e916";
+}
+.icon-mail2:before {
+  content: "\e917";
+}
+.icon-mail3:before {
+  content: "\e918";
+}
+.icon-mail4:before {
+  content: "\e919";
+}
+.icon-phone:before {
+  content: "\e900";
+}
+.icon-phone-hang-up:before {
+  content: "\e901";
+}
+.icon-play:before {
+  content: "\e902";
+}
+.icon-cancel-circle:before {
+  content: "\e903";
+}
+.icon-cross:before {
+  content: "\e904";
+}
+.icon-checkmark:before {
+  content: "\e905";
+}
+.icon-checkmark2:before {
+  content: "\e906";
+}
+.icon-heterosexual-couple-in-love-svgrepo-com:before {
+  content: "\e907";
+}
+.icon-unisex-svgrepo-com:before {
+  content: "\e908";
+}
+.icon-lips-of-fe-li-male-sexy-mouth-svgrepo-com:before {
+  content: "\e909";
+}
+.icon-underwear-svgrepo-com-1:before {
+  content: "\e90a";
+}
+.icon-underwear-svgrepo-com:before {
+  content: "\e90b";
+}
+.icon-men-underwear-svgrepo-com:before {
+  content: "\e90c";
+}
+.icon-17872590891621880021:before {
+  content: "\e90d";
+}
+.icon-12413716981579690094:before {
+  content: "\e90e";
+}
+.icon-4101000221577456581:before {
+  content: "\e90f";
+}
+.icon-facebook2:before {
+  content: "\e910";
+}
+.icon-instagram:before {
+  content: "\e911";
+}
+.icon-location2:before {
+  content: "\e912";
+}
+.icon-menu:before {
+  content: "\e913";
+}
+.icon-whatsapp:before {
+  content: "\e914";
+}

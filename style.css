@@ -1,0 +1,744 @@
+/* ============== RESET ===================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  /* o professor coloca aqui para ser universal, em qualquer ul
+  existente no código. Assim, nós tiramos os pontinhos dos nomes
+  da lista, usando: */
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  /* faz sumir a linha dos links e a mudança de cor ao passar
+  o mouse. Neste caso, a decoração do texto é none */
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* ============== VARIAVEIS ===================== */
+:root {
+  --header-height: 4.5rem;
+
+  /* colors */
+  --hue: 310;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+  /* FONTS */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+  /* Title Fonts */
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
+}
+
+/* ============== BASE ===================== */
+
+html {
+  scroll-behavior: smooth;
+  /* suaviza a barra de rolagem. Awesome */
+}
+
+body {
+  font: 400 1rem var(--body-font);
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+.title {
+  font: 700 var(--title-font-size) var(--title-font);
+  color: var(--text-color);
+  -webkit-font-smoothing: auto;
+}
+
+.button {
+  background-color: var(--base-color);
+  color: var(--text-color-light);
+  height: 3.5rem;
+  /* o botão criado pela professora tem 214 x 56. Assim, dividimos 56
+  por 16, sendo 16 o equivalente a 1 pixel. Todo o sistema é feito
+  em REM pois fica adaptavel para todas as telas de pixels diversos */
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem var(--body-font);
+  transition: background 0.3s;
+  /* transition serve para transição das cores do hover  */
+}
+
+.button:hover {
+  background: var(--base-color-alt);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
+}
+
+/* ============== LAYOUT ===================== */
+
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  /* display , aqui, libera novas opções em css. Vamos usar o gap.
+  gap 1.5rem foi usado para criar espaços padrões entre todas
+  as classes que conter grid */
+  gap: 2rem;
+}
+
+.section {
+  padding: calc(5rem + var(--header-height)) 0;
+  /*  - faça um calculo de 5rem da distancia de cada section com o a
+  altura do header */
+}
+
+.section .title {
+  margin-bottom: 1rem;
+}
+
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
+}
+
+.section header {
+  margin-bottom: 4rem;
+}
+
+.section header strong {
+  color: var(--base-color);
+}
+
+#header {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2rem;
+  display: flex;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--body-color);
+  /* a configuração acima, apesar do entendimento não ser mto claro
+  ainda, ela deixa fixa nosso titulo, e este, não se move com a pagina */
+  width: 100%;
+}
+
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= LOGO ====================== */
+
+.logo {
+  font: 700 1.31rem var(--title-font);
+  color: var(--title-color);
+}
+
+.logo span {
+  color: var(--base-color);
+}
+
+.logo-alt span {
+  color: var(--body-color);
+}
+
+/* ================ NAVIGATION ==================== */
+
+nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* quando é colocado o display flex, os itens dentro do nav se 
+  alinham um na frente do outro. justify-content nos possibilita
+  a justificação do texto... Maykão pescolhe o espaço entre eles;*/
+  width: 100%;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.2s;
+  /* algumas propriedades que tem transição: width, height, background,
+  color... etc */
+  position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--base-color);
+}
+
+nav ul li a::after {
+  /* todo pseudoelement precisa colocar um content, msm que seja
+  vazio.  */
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+  top: -20rem;
+  transition: 0.3s;
+}
+
+nav .menu ul {
+  display: none;
+}
+
+/* MOSTRAR MENU */
+
+nav.show .menu {
+  /* essa vale observar. A escrita é: Nav.show significa dizer que o
+  nav vai receber uma classe show, dentro então dele, procura o menu */
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* 100% de view port height ... viewport é tudo que vemos na pagina
+  essa extensão branca de uma ponta a outra da tela, na vertical */
+  display: grid;
+  place-content: center;
+}
+
+nav.show .menu ul {
+  display: grid;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+/* ========================================== */
+/* =========== TOOGLE MENU ================= */
+
+.toggle {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  /* lá ele está como imagem, destá forma ele vira fonte para a gente */
+  cursor: pointer;
+  /* muda a setinha para "mãozinha do mickey" heheh */
+}
+
+nav .icon-cross {
+  visibility: hidden;
+  opacity: 0;
+  /* para garantir hehehe */
+  position: absolute;
+  top: -1.5rem;
+  right: 1.5rem;
+  transition: 0.2s;
+}
+
+nav.show div.icon-cross {
+  /* quando o nav tiver no show, ou seja, quando a gente clicar em
+show ... ele vai abrir o show no nav. Qunado isso acontecer, o 
+icon-close vai aparecer.
+*/
+
+  /* O X lá em cima aparecerá quando o menu show abrir  */
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+
+/* ============== HOME ===================== */
+
+#home {
+  overflow: hidden;
+}
+
+#home .container {
+  margin: 0;
+}
+
+#home .image {
+  position: relative;
+}
+
+#home .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -16.8%;
+  left: 16.7%;
+  z-index: 0;
+  /* z-index é o eixo de profundidade do elemento. Maykão: - Eixo 
+  horizontal X, eixo vertical Y, e eixo Z que é o de profundidade.
+   */
+  /* Estamos criando a segunda imagem que ficará na sombra da img
+   principal (seria a imagem verde lá no projeto original, que 
+   fica ao fundo */
+
+  /* o professor usa uma regra de 3 para criar a imagem, 
+   fazendo regras de 3 para entender como a imagem deve ficar
+    */
+}
+
+#home .image img {
+  position: relative;
+  /* habilita novas propriedades do CSS que não seria possivel sem
+  colocar position relative antes */
+  right: 2.93rem;
+}
+
+#home .image img,
+#home .image::before {
+  border-radius: 0.25rem;
+}
+
+#home .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+#home .text h1 {
+  margin-bottom: 1rem;
+}
+
+#home .text p {
+  margin-bottom: 2rem;
+}
+
+/* ================= ABOUT ===================== */
+
+#about {
+  background: white;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .image {
+  position: relative;
+}
+
+#about .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -8.3%;
+  left: -33%;
+  z-index: 0;
+}
+
+#about .image img {
+  position: relative;
+}
+
+#about .image img,
+#about .image::before {
+  border-radius: 0.25rem;
+}
+
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/* ================ SERVICES ===================== */
+
+.cards.grid {
+  /* cards que tiver grid dentro, recebe: */
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ================ SERVICES ==================== */
+
+#testimonials {
+  background: white;
+}
+
+#testimonials .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#testimonials header {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+#testimonials blockquote {
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.25rem;
+}
+
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.875rem;
+  /* Maykão usa a lembrança do tempo de escola... na hora de escrever
+  paragrafos */
+  margin-bottom: 1.5rem;
+  color: var(--title-color);
+}
+
+#testimonials blockquote p span {
+  font: 700 2.5rem serif;
+  position: absolute;
+  top: -0.52rem;
+  left: -1.875rem;
+  color: var(--base-color);
+}
+
+#testimonials cite {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+#testimonials cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  /*  pegue o objeto ou imagem, pega ela e encaixe cobrindo todo o espaço
+  que tiver ali. Dessa forma, msm a imagem não sendo boa vai cobrir
+  e ficar bom */
+  clip-path: circle();
+  /* arredonda a imagem.. AWESOME */
+  margin-right: 0.5rem;
+}
+
+/* swiper */
+.swiper-slide {
+  height: auto;
+  /* a altura dele deve ser automatica dependendo do tamanho do conteúdo */
+  padding: 4rem 1rem;
+  /* 1rem nas laterais e 4 em cidma e em baixo */
+}
+
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--base-color);
+}
+
+/* ===== CONTACT ======================== */
+
+#contact .grid {
+  gap: 4rem;
+}
+
+#contact .text p {
+  margin-bottom: 2rem;
+}
+
+#contact .button i,
+#contact ul li i {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+}
+
+#contact ul.grid {
+  gap: 2rem;
+}
+
+#contact ul li {
+  display: flex;
+  align-items: center;
+}
+
+#contact ul li i {
+  color: var(--base-color);
+}
+
+/* ========== FOOTER ===================== */
+
+footer {
+  background: var(--base-color);
+}
+
+footer.section {
+  padding: 4rem 0;
+}
+
+footer .logo {
+  display: inline-block;
+  /* display inline é o padrão do useragente. (o tradicional, padrão que a gente
+  vê ... dessa forma não habilita o margin-bottom */
+  margin-bottom: 1.5rem;
+}
+
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+footer i {
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+}
+
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;
+}
+
+footer .social a {
+  transition: 0.3s;
+  display: inline-block;
+  /* o link a, é um display inline, e um display inline não recebe essa mudança
+  do hover... é necessário colocar inline-block */
+}
+
+footer .social a:hover {
+  transform: translateY(-6px);
+}
+
+/* Bakc to top */
+.back-to-top {
+  background: var(--base-color);
+  color: var(--text-color-light);
+
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  padding: 0.5rem;
+  clip-path: circle();
+
+  font-size: 1.5rem;
+  line-height: 0;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: 0.3s;
+  transform: translateY(100%);
+  /* transform é uma propriedade do css que aceita mtas outras
+  ctrl + space nos possibilidade ver as opções ... o professor usa
+  translate, que serve para mexer eixo X e Y .. e se colocar 3d, o terceiro
+  seria o eixo Z, o eixo de profundidade */
+}
+
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* RESPONSIVO */
+
+/* aqui temos um @, que no ingles tbm significa at.. o termo se chama
+at rules... aqui temos uma at rules: @media */
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* este elemento apresentou um erro no começo, pois a regra da especificidade não foi aplciada.
+    Assim, Maykão usou o #testimonials header pra acrescenter a configuração neste tbm */
+  }
+
+  .button {
+    height: 3.125rem;
+  }
+
+  /* navigation */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  main {
+    margin-top: var(--header-height);
+    /* o professor usa calc que é uma função */
+  }
+
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  #home .image {
+    order: 1;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /* === ABOUT */
+
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+
+  /* Servicess */
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    /* como nossos "cards" ja estão com grid la no HTML, agora a gente usa só o grid como grid-template-columns
+    para organizar por frações (fr). Unidade de medida excelente para organizar situações como essa */
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* Testimonials  */
+
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Contact */
+
+  #contact .container {
+    grid-auto-flow: column;
+    /* de primeiro, a caixa de contatos ficou um pouco pra cima.. o professor usa o align-itens
+    para concertar */
+    align-items: center;
+  }
+
+  #contact .text {
+    max-width: 25rem;
+  }
+
+  /* Footer  */
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+}

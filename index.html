@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OriginSix</title>
+
+    <!-- ==== ICONS ===== -->
+
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <!-- SWIPER !! ===== -->
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- ==== STYLES ===== -->
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ===== FONTS ===== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <nav class="container">
+        <a class="logo" href="#">Intimi<span>dade</span>.</a>
+
+        <!-- A lista foi criada.. ul ... li é cada item dessa lista 
+        ul>li*5>a ... desse modo, o emmet preenche automaticamente
+      criando lista, itens , 5 deles e ainda o "a" de links, para
+    podermos interagir  -->
+
+        <!-- === MENU -->
+        <div class="menu">
+          <ul class="grid">
+            <li><a class="title" href="#home">Inicio</a></li>
+            <li><a class="title" href="#about">Sobre</a></li>
+            <li><a class="title" href="#services">Serviços</a></li>
+            <li><a class="title" href="#testimonials">Depoimentos</a></li>
+            <li><a class="title" href="#contact">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- ====  ///MENU -->
+
+        <div class="toggle icon-menu"></div>
+        <div class="toggle icon-cross"></div>
+      </nav>
+    </header>
+
+    <main>
+      <!--  HOME -------------- -->
+      <section class="section" id="home">
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="https://images.unsplash.com/photo-1597215766987-edabf29dff43?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhbnR5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Mulher de langerie"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">Sua segunda pele aqui</h2>
+            <p>A loja mais completa da cidade para suas peças intimas</p>
+            <a class="button" href="#">Agendar um horário</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+
+      <!--  ABOUT ----------- -->
+
+      <!-- vamos fazer uma section, que tem uma classe section,
+      e um id about, dentro dele vamos colocar um container que
+    tem um grid tbm 
+  
+    section.section#about>.container.grid
+  -->
+      <section class="section" id="about">
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dGVhbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
+              alt="Varias mãos formando um coração com tinta vermelha"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">Sobre nós</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Necessitatibus deleniti perferendis vel molestiae soluta, quaerat
+              beatae dicta ducimus praesentium architecto harum dolorum
+              distinctio illo earum assumenda itaque. Omnis, quam repellat.
+            </p>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+              illum ratione impedit quae eum quis adipisci asperiores, est
+              doloribus distinctio excepturi minima eius dolore! Perferendis
+              laborum illo aspernatur repellendus ipsum.
+            </p>
+            <br />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+              exercitationem, illum sapiente quasi hic iusto odio maiores esse
+              quaerat quis necessitatibus at odit, dolores dicta, officia ab
+              quos. Provident, quae.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+
+      <!-- SERVICES ----------------- -->
+
+      <!-- vamos criar mais section com o mesmo esquema. O atalho é 
+  mto eficiente pois criamos tudo de uma vez com as propriedade
+que criamos lá no menu.... agora criamos a section do services
+
+section.section#services>.container.grid    -->
+      <section class="section" id="services">
+        <div class="container grid">
+          <header>
+            <h2 class="title">Serviços</h2>
+            <p class="subtitle">
+              Lorem ipsum dolor, sit
+              <strong>amet consectetur</strong> adipisicing elit. Molestiae
+              excepturi sunt, quos enim sed repellat architecto hic id voluptate
+              et dolor minima doloremque repellendus delectus veniam
+              exercitationem officiis in laboriosam?
+            </p>
+          </header>
+
+          <div class="cards grid">
+            <div class="card">
+              <i class="icon-underwear-svgrepo-com"></i>
+              <h3 class="title">Moda Intima</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum
+                molestiae autem aspernatur esse optio amet nisi velit minima!
+                Voluptatum in exercitationem explicabo voluptatem corrupti nisi
+                fugiat rem tenetur maiores eum?
+              </p>
+            </div>
+            <div class="card">
+              <i class="icon-lips-of-fe-li-male-sexy-mouth-svgrepo-com"></i>
+              <h3 class="title">Sexy Shop</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic
+                pariatur fugiat numquam dolorum, voluptate dolorem adipisci
+                explicabo veniam ex possimus, expedita beatae delectus eum
+                labore aspernatur et rerum deserunt exercitationem.
+              </p>
+            </div>
+            <div class="card">
+              <i class="icon-underwear-svgrepo-com-1"></i>
+              <h3 class="title">Moda Praia</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deserunt consectetur accusantium beatae possimus iste. Corrupti,
+                saepe aperiam consectetur placeat earum dolore quibusdam optio
+                dolor, animi nemo voluptatum sit harum cum?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+
+      <!-- TESTIMONIALS --------------- -->
+      <section class="section" id="testimonials">
+        <div class="container">
+          <header>
+            <h2 class="title">Depoimentos de quem ja passou por aqui</h2>
+          </header>
+          <div class="testimonials swiper-container">
+            <div class="swiper-wrapper">
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Comprei pela primeira vez lá. Foi uma cueca box. eu tava
+                    precisando muito de um produto de qualidade ... amei ! não
+                    se compara a qualidade com outros produtos. Recomendo
+                  </p>
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/men/23.jpg"
+                      alt="Ageu pousando para a foto fazendo chifres de rock'n'roll
+              na mão direita"
+                    />
+                    Ageu Takakara no Muru
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    A loja é cheia de produtos de qualidade e me oferece varias
+                    formas de pagamentos. Não se encontra nada parecido pela
+                    região
+                  </p>
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/4.jpg"
+                      alt="Foto de Vânia"
+                    />
+                    Mother-of-the-Cats
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Mãe me levou lá pela primeira vez, achei que fosse exagero
+                    dela. São muitos produtos bonitos para todos os gostos.
+                    Comprei um biquini maravilhoso e estou amando. Super
+                    recomendo!
+                  </p>
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/18.jpg"
+                      alt="Foto de Marcela"
+                    />
+                    Marcela Curumim
+                  </cite>
+                </blockquote>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+
+      <!-- CONTACTS ------------- -->
+
+      <section class="section" id="contact">
+        <div class="container grid">
+          <div class="text">
+            <h2 class="title">Entre em contato com a gente</h2>
+            <p>
+              Liga pra gente ! Te auxiliamos e daremos a devida atenção.
+              Mandaremos fotos dos produtos de nossa loja para você acompanhar
+              sem sair de casa
+            </p>
+            <a
+              href="https://api.whatsapp.com/send?phone+5588996385959&text=Oi! Somos a Intimidade! Em que posso ajudar?"
+              class="button"
+              target="_blank"
+              ><i class="icon-whatsapp"></i> Entrar em contato</a
+            >
+          </div>
+
+          <div class="links">
+            <ul class="grid">
+              <li><i class="icon-phone"></i> 88 99638-5995</li>
+              <li>
+                <i class="icon-location2"></i> R. Dona Anesia Castelo nº 44
+              </li>
+              <li><i class="icon-instagram"></i> loja_intimidade__</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+    </main>
+
+    <footer class="section">
+      <div class="container grid">
+        <div class="brand">
+          <a class="logo logo-alt" href="#home">Intimi<span>dade</span>.</a>
+          <p>©2021 Intimidade.</p>
+          <p>Todos os direitos reservados.</p>
+        </div>
+
+        <div class="social grid">
+          <a href="https://instagram.com" target="_blank">
+            <i class="icon-instagram"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <i class="icon-facebook2"></i
+          ></a>
+          <a href="https://youtube.com" target="_blank"
+            ><i class="icon-play"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a>
+
+    <!--  SWIPEEER !! Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- SCROLL Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- mains.js (nosso script) -->
+    <script src="main.js"></script>
+  </body>
+</html>
